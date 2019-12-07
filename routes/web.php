@@ -31,6 +31,14 @@ Route::get('/divisi/edit/{id}', 'DivisiController@edit');
 Route::put('/divisi/update/{id}', 'DivisiController@update');
 Route::get('/divisi/hapus/{id}', 'DivisiController@delete');
 
+// halaman jabatan
+Route::get('/jabatan', 'JabatanController@index');
+Route::get('/jabatan/tambah', 'JabatanController@tambah');
+Route::post('/jabatan/store', 'JabatanController@store');
+Route::get('/jabatan/edit/{id}', 'JabatanController@edit');
+Route::put('/jabatan/update/{id}', 'JabatanController@update');
+Route::get('/jabatan/hapus/{id}', 'JabatanController@delete');
+
 // halaman karyawan
 Route::get('/karyawan','KaryawanController@index');
 Route::get('/karyawan/tambah', 'KaryawanController@tambah');

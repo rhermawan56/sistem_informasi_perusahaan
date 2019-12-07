@@ -8,7 +8,7 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 		<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicon.png') }}">
-		<title>SIP-Divisi</title>
+		<title>SIP-Jabatan</title>
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/plugins/bootstrap/css/bootstrap.min.css') }}" >
 
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/plugins/chartist-js/dist/chartist.min.css') }}" >
@@ -37,7 +37,7 @@
 				<div class="col-md-5 col-8 align-self-center">
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item"><a href="{{ url('/dashboard') }}">Dashboard</a></li>
-						<li class="breadcrumb-item active">Data Divisi</li>
+						<li class="breadcrumb-item active">Data Jabatan</li>
 					</ol>
 				</div>
 			</div>
@@ -56,25 +56,25 @@
 								</thead>
 								<tbody>
 									<?php $no = 0;?>
-									@foreach($divisi as $d)
+									@foreach($jabatan as $j)
 									<?php $no++ ;?>
 										<tr>
 											<th scope="row">{{ $no }}</th>
-											<td>{{ $d->nama }}</td>
+											<td>{{ $j->nama }}</td>
 											<td>
-												<a href="/divisi/edit/{{ $d->id }}" class="btn btn-outline-warning" data-toggle="tooltip" data-placement="bottom" title="Ubah">
+												<a href="/jabatan/edit/{{ $j->id }}" class="btn btn-outline-warning" data-toggle="tooltip" data-placement="bottom" title="Ubah">
 													<i class="mdi mdi-account-edit"></i>
 												</a>
 											</td>
 											<td>
-												<span data-toggle="modal" href="#exampleModal-{{ $d->id }}">
+												<span data-toggle="modal" href="#exampleModal-{{ $j->id }}">
 													<button type="button" class="btn btn-outline-danger" data-toggle="tooltip" data-placement="bottom" title="Hapus" data-animation="false">
 													  <i class="mdi mdi-delete"></i>
 													</button>
 												</span>
 
 												<!-- modal pop up confirmation -->
-												<div class="modal fade" id="exampleModal-{{ $d->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+												<div class="modal fade" id="exampleModal-{{ $j->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 													<div class="modal-dialog" role="document">
 														<div class="modal-content">
 															<div class="modal-header">
@@ -84,10 +84,10 @@
 																</button>
 															</div>
 															<div class="modal-body">
-																<p>Apakah anda yakin ingin menghapus divisi <b>{{ $d->nama }}</b> ?</p>
+																<p>Apakah anda yakin ingin menghapus jabatan <b>{{ $j->nama }}</b> ?</p>
 															</div>
 															<div class="modal-footer">
-																<a href="/divisi/hapus/{{ $d->id }}" class="btn btn-outline-danger" data-toggle="tooltip" data-placement="bottom" title="Ya, hapus" data-animation="false">
+																<a href="/jabatan/hapus/{{ $j->id }}" class="btn btn-outline-danger" data-toggle="tooltip" data-placement="bottom" title="Ya, hapus" data-animation="false">
 																	<i class="mdi mdi-delete"></i>
 																</a>
 																<button type="button" class="btn btn-outline-secondary" data-toggle="tooltip" data-placement="bottom" title="Batal" data-animation="false" data-dismiss="modal">
@@ -102,7 +102,7 @@
 									@endforeach
 								</tbody>
 							</table>
-							<a href="/divisi/tambah" class="btn btn-outline-primary" data-toggle="tooltip" data-placement="bottom" title="Tambah">
+							<a href="/jabatan/tambah" class="btn btn-outline-primary" data-toggle="tooltip" data-placement="bottom" title="Tambah">
 								<i class="mdi mdi-account-plus"></i>
 							</a>
 						</div>

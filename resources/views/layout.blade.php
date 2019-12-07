@@ -86,14 +86,20 @@
 							</li>							
 							<li>
 								<a class="waves-effect waves-dark" href="table-basic.html" aria-expanded="false">
-									<i class="mdi mdi-table"></i>
+									<i class="mdi mdi-archive"></i>
 									<span class="hide-menu">Data Barang</span>
 								</a>
 							</li>
 							<li>
 								<a class="waves-effect waves-dark" href="{{ url('/divisi') }}" aria-expanded="false">
-									<i class="mdi mdi-contacts"></i>
+									<i class="mdi mdi-account-settings-variant"></i>
 									<span class="hide-menu">Data Divisi</span>
+								</a>
+							</li>
+							<li>
+								<a class="waves-effect waves-dark" href="{{ url('/jabatan') }}" aria-expanded="false">
+									<i class="mdi mdi-human-handsup"></i>
+									<span class="hide-menu">Data Jabatan</span>
 								</a>
 							</li>
 							<li>

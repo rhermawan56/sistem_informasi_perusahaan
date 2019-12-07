@@ -4,21 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Divisi;
+use App\Jabatan;
 
-class DivisiController extends Controller
+class JabatanController extends Controller
 {
 	// menampilkan semua data
 	public function index()
 	{
-		$divisi = Divisi::all();
-		return view('divisi', ['divisi' => $divisi]);
+		$jabatan = Jabatan::all();
+		return view('jabatan', ['jabatan' => $jabatan]);
 	}
 
 	// manambah data
 	public function tambah()
 	{
-		return view('divisi_tambah');
+		return view('jabatan_tambah');
 	}
 
 	// validasi data
@@ -28,18 +28,18 @@ class DivisiController extends Controller
 			'nama' => 'required'
 		]);
 
-			Divisi::create([
+			Jabatan::create([
 			'nama' => $request->nama
 		]);
 
-		return redirect('/divisi');
+		return redirect('/jabatan');
 	}
 
 	// mengubah data
 	public function edit($id)
 	{
-		 $divisi = Divisi::find($id);
-		 return view('divisi_edit', ['divisi' => $divisi]);
+		 $jabatan = Jabatan::find($id);
+		 return view('jabatan_edit', ['jabatan' => $jabatan]);
 	}
 
 	public function update($id, Request $request)
@@ -48,17 +48,17 @@ class DivisiController extends Controller
 		 'nama' => 'required'
 		]);
  
-		$divisi = Divisi::find($id);
-		$divisi->nama = $request->nama;
-		$divisi->save();
-		return redirect('/divisi');
+		$jabatan = Jabatan::find($id);
+		$jabatan->nama = $request->nama;
+		$jabatan->save();
+		return redirect('/jabatan');
 	}
 
 	// hapus data
 	public function delete($id)
 	{
-		$divisi = Divisi::find($id);
-		$divisi->delete();
-		return redirect('/divisi');
+		$jabatan = Jabatan::find($id);
+		$jabatan->delete();
+		return redirect('/jabatan');
 	}
 }
