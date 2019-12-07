@@ -55,9 +55,11 @@
 									</tr>
 								</thead>
 								<tbody>
+									<?php $no = 0;?>
 									@foreach($divisi as $d)
+									<?php $no++ ;?>
 										<tr>
-											<th scope="row">1</th>
+											<th scope="row">{{ $no }}</th>
 											<td>{{ $d->nama }}</td>
 											<td>
 												<a href="/divisi/edit/{{ $d->id }}" class="btn btn-outline-warning" data-toggle="tooltip" data-placement="bottom" title="Ubah">
