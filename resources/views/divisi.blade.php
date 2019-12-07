@@ -65,11 +65,36 @@
 												</a>
 											</td>
 											<td>
-												<span data-toggle="modal" data-target="#exampleModal">
-													<button type="button" class="btn btn-outline-danger" data-toggle="tooltip" data-placement="bottom" title="Hapus">
+												<span data-toggle="modal" href="#exampleModal-{{ $d->id }}">
+													<button type="button" class="btn btn-outline-danger" data-toggle="tooltip" data-placement="bottom" title="Hapus" data-animation="false">
 													  <i class="mdi mdi-delete"></i>
 													</button>
 												</span>
+
+												<!-- modal pop up confirmation -->
+												<div class="modal fade" id="exampleModal-{{ $d->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+													<div class="modal-dialog" role="document">
+														<div class="modal-content">
+															<div class="modal-header">
+																<h5 class="modal-title" id="exampleModalLabel">Perhatian !</h5>
+																<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+																	<span aria-hidden="true">&times;</span>
+																</button>
+															</div>
+															<div class="modal-body">
+																<p>Apakah anda yakin ingin menghapus divisi <b>{{ $d->nama }}</b> ?</p>
+															</div>
+															<div class="modal-footer">
+																<a href="/divisi/hapus/{{ $d->id }}" class="btn btn-outline-danger" data-toggle="tooltip" data-placement="bottom" title="Ya, hapus" data-animation="false">
+																	<i class="mdi mdi-delete"></i>
+																</a>
+																<button type="button" class="btn btn-outline-secondary" data-toggle="tooltip" data-placement="bottom" title="Batal" data-animation="false" data-dismiss="modal">
+																	<i class="mdi mdi-close"></i>
+																</button>
+															</div>
+														</div>
+													</div>
+												</div>
 											</td>
 										</tr>
 									@endforeach
@@ -79,30 +104,7 @@
 								<i class="mdi mdi-account-plus"></i>
 							</a>
 
-							<!-- modal pop up confirmation -->
-							<div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-								<div class="modal-dialog" role="document">
-									<div class="modal-content">
-										<div class="modal-header">
-											<h5 class="modal-title" id="exampleModalLabel">Perhatian !</h5>
-											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-												<span aria-hidden="true">&times;</span>
-											</button>
-										</div>
-										<div class="modal-body">
-											<p>Apakah anda yakin ingin menghapus {{ $d->nama }}</p>
-										</div>
-										<div class="modal-footer">
-											<a href="/divisi/hapus/{{ $d->id }}" class="btn btn-outline-danger" data-toggle="tooltip" data-placement="bottom" title="Ya, hapus" data-animation="false">
-												<i class="mdi mdi-delete"></i>
-											</a>
-											<button type="button" class="btn btn-outline-secondary" data-toggle="tooltip" data-placement="bottom" title="Batal" data-animation="false" data-dismiss="modal">
-												<i class="mdi mdi-close"></i>
-											</button>
-										</div>
-									</div>
-								</div>
-							</div>
+							
 
 						</div>
 					</div>
