@@ -72,13 +72,35 @@
 				<div class="scroll-sidebar">
 					<nav class="sidebar-nav">
 						<ul id="sidebarnav">
-							<li> <a class="waves-effect waves-dark" href="index.html" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a>
+							<li>
+								<a class="waves-effect waves-dark" href="index.html" aria-expanded="false">
+									<i class="mdi mdi-gauge"></i>
+									<span class="hide-menu">Dashboard</span>
+								</a>
 							</li>
-							<li> <a class="waves-effect waves-dark" href="pages-profile.html" aria-expanded="false"><i class="mdi mdi-account-check"></i><span class="hide-menu">Profile</span></a>
+							<li>
+								<a class="waves-effect waves-dark" href="pages-profile.html" aria-expanded="false">
+									<i class="mdi mdi-account-check"></i>
+									<span class="hide-menu">Profile</span>
+								</a>
 							</li>
-							<li> <a class="waves-effect waves-dark" href="table-basic.html" aria-expanded="false"><i class="mdi mdi-table"></i><span class="hide-menu">Data Barang</span></a>
+							<li>
+								<a class="waves-effect waves-dark" href="table-basic.html" aria-expanded="false">
+									<i class="mdi mdi-table"></i>
+									<span class="hide-menu">Data Barang</span>
+								</a>
 							</li>
-							<li> <a class="waves-effect waves-dark" href="icon-material.html" aria-expanded="false"><i class="mdi mdi-account-multiple"></i><span class="hide-menu">SPK Kontrak Karyawan</span></a>
+							<li>
+								<a class="waves-effect waves-dark" href="table-basic.html" aria-expanded="false">
+									<i class="mdi mdi-table"></i>
+									<span class="hide-menu">Data Karyawan</span>
+								</a>
+							</li>
+							<li>
+								<a class="waves-effect waves-dark" href="icon-material.html" aria-expanded="false">
+									<i class="mdi mdi-account-multiple"></i>
+									<span class="hide-menu">SPK Kontrak Karyawan</span>
+								</a>
 							</li>
 						</ul>
 					</nav>
