@@ -29,10 +29,10 @@
 	@extends('layout')
 
 	@section('content')
-	  <html stuff>
+		<html stuff>
 
-	  <!-- dynamic contents -->
-	  <div class="container-fluid">
+		<!-- dynamic contents -->
+		<div class="container-fluid">
 			<div class="row page-titles">
 				<div class="col-md-5 col-8 align-self-center">
 					<ol class="breadcrumb">
@@ -65,9 +65,11 @@
 												</a>
 											</td>
 											<td>
-												<a href="/divisi/hapus/{{ $d->id }}" class="btn btn-outline-danger" data-toggle="tooltip" data-placement="bottom" title="Hapus">
-													<i class="mdi mdi-delete"></i>
-												</a>
+												<span data-toggle="modal" data-target="#exampleModal">
+													<button type="button" class="btn btn-outline-danger" data-toggle="tooltip" data-placement="bottom" title="Hapus">
+													  <i class="mdi mdi-delete"></i>
+													</button>
+												</span>
 											</td>
 										</tr>
 									@endforeach
@@ -76,6 +78,32 @@
 							<a href="/divisi/tambah" class="btn btn-outline-primary" data-toggle="tooltip" data-placement="bottom" title="Tambah">
 								<i class="mdi mdi-account-plus"></i>
 							</a>
+
+							<!-- modal pop up confirmation -->
+							<div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">Perhatian !</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="modal-body">
+											<p>Apakah anda yakin ingin menghapus {{ $d->nama }}</p>
+										</div>
+										<div class="modal-footer">
+											<a href="/divisi/hapus/{{ $d->id }}" class="btn btn-outline-danger" data-toggle="tooltip" data-placement="bottom" title="Ya, hapus" data-animation="false">
+												<i class="mdi mdi-delete"></i>
+											</a>
+											<button type="button" class="btn btn-outline-secondary" data-toggle="tooltip" data-placement="bottom" title="Batal" data-animation="false" data-dismiss="modal">
+												<i class="mdi mdi-close"></i>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+
 						</div>
 					</div>
 				</div>
