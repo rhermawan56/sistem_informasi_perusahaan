@@ -8,7 +8,7 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 		<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicon.png') }}">
-		<title>SIP-Dashboard</title>
+		<title>SIP-Divisi</title>
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/plugins/bootstrap/css/bootstrap.min.css') }}" >
 
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/plugins/chartist-js/dist/chartist.min.css') }}" >
@@ -37,18 +37,48 @@
 				<div class="col-md-5 col-8 align-self-center">
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item"><a href="{{ url('/dashboard') }}">Dashboard</a></li>
+						<li class="breadcrumb-item active">Data Divisi</li>
 					</ol>
 				</div>
 			</div>
 			<div class="row">
 				<!-- Column -->
-			<div class="col">
-				<div class="card">
-					<div class="card-block">
-						<p>Selamat Datang.</p>
+				<div class="col">
+					<div class="card">
+						<div class="card-block">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th scope="col">#</th>
+										<th scope="col">Nama</th>
+										<th scope="col"></th>
+									</tr>
+								</thead>
+								<tbody>
+									@foreach($divisi as $d)
+										<tr>
+											<th scope="row">1</th>
+											<td>{{ $d->nama }}</td>
+											<td>
+												<a href="/divisi/edit/{{ $d->id }}" class="btn btn-outline-warning" data-toggle="tooltip" data-placement="bottom" title="Ubah">
+													<i class="mdi mdi-account-edit"></i>
+												</a>
+											</td>
+											<td>
+												<a href="/divisi/hapus/{{ $d->id }}" class="btn btn-outline-danger" data-toggle="tooltip" data-placement="bottom" title="Hapus">
+													<i class="mdi mdi-delete"></i>
+												</a>
+											</td>
+										</tr>
+									@endforeach
+								</tbody>
+							</table>
+							<a href="/divisi/tambah" class="btn btn-outline-primary" data-toggle="tooltip" data-placement="bottom" title="Tambah">
+								<i class="mdi mdi-account-plus"></i>
+							</a>
+						</div>
 					</div>
 				</div>
-			</div>
 			</div>
 		</div>
 	@stop

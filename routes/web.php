@@ -22,3 +22,16 @@ Route::get('/dashboard', function () {
 Route::get('/layout', function () {
 	return view('layout');
 });
+
+// halaman divisi
+Route::get('/divisi','DivisiController@index');
+Route::get('/divisi/tambah', 'DivisiController@tambah');
+Route::post('/divisi/store', 'DivisiController@store');
+Route::get('/divisi/edit/{id}', 'DivisiController@edit');
+Route::put('/divisi/update/{id}', 'DivisiController@update');
+Route::get('/divisi/hapus/{id}', 'DivisiController@delete');
+
+// halaman karyawan
+Route::get('/karyawan','KaryawanController@index');
+Route::get('/karyawan/tambah', 'KaryawanController@tambah');
+Route::post('/karyawan/store', 'KaryawanController@store');

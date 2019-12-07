@@ -8,7 +8,7 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 		<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicon.png') }}">
-		<title>SIP-Dashboard</title>
+		<title>SIP-Ubah Divisi</title>
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/plugins/bootstrap/css/bootstrap.min.css') }}" >
 
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/plugins/chartist-js/dist/chartist.min.css') }}" >
@@ -29,26 +29,50 @@
 	@extends('layout')
 
 	@section('content')
-	  <html stuff>
+		<html stuff>
 
-	  <!-- dynamic contents -->
-	  <div class="container-fluid">
+		<!-- dynamic contents -->
+		<div class="container-fluid">
 			<div class="row page-titles">
 				<div class="col-md-5 col-8 align-self-center">
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item"><a href="{{ url('/dashboard') }}">Dashboard</a></li>
+						<li class="breadcrumb-item"><a href="{{ url('/divisi') }}">Data Divisi</a></li>
+						<li class="breadcrumb-item">Ubah</li>
+						<li class="breadcrumb-item active">{{ $divisi->nama }}</li>
 					</ol>
 				</div>
 			</div>
 			<div class="row">
 				<!-- Column -->
-			<div class="col">
-				<div class="card">
-					<div class="card-block">
-						<p>Selamat Datang.</p>
+				<div class="col">
+					<div class="card">
+						<div class="card-block">
+							<form method="post" action="/divisi/update/{{ $divisi->id }}">
+								{{ csrf_field() }}
+								{{ method_field('PUT') }}
+
+								<p><i>*Data tidak boleh kosong</i></p>
+								<div class="row">
+									<div class="col">
+										<label for="nama">Nama</label>
+										<input type="text" name="nama" class="form-control">
+
+										@if($errors->has('nama'))
+											<div class="text-danger">
+												<i>{{ $errors->first('nama')}}</i>
+											</div>
+										@endif
+									</div>
+								</div>
+								<br>
+								<button type="submit" class="btn btn-outline-success" data-toggle="tooltip" data-placement="bottom" title="Simpan" value="Simpan">
+									<i class="mdi mdi-content-save"></i>
+								</button>
+							</form>
+						</div>
 					</div>
 				</div>
-			</div>
 			</div>
 		</div>
 	@stop

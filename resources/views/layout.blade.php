@@ -83,7 +83,7 @@
 									<i class="mdi mdi-account-check"></i>
 									<span class="hide-menu">Profile</span>
 								</a>
-							</li>
+							</li>							
 							<li>
 								<a class="waves-effect waves-dark" href="table-basic.html" aria-expanded="false">
 									<i class="mdi mdi-table"></i>
@@ -91,7 +91,13 @@
 								</a>
 							</li>
 							<li>
-								<a class="waves-effect waves-dark" href="table-basic.html" aria-expanded="false">
+								<a class="waves-effect waves-dark" href="{{ url('/divisi') }}" aria-expanded="false">
+									<i class="mdi mdi-contacts"></i>
+									<span class="hide-menu">Data Divisi</span>
+								</a>
+							</li>
+							<li>
+								<a class="waves-effect waves-dark" href="{{ url('/karyawan') }}" aria-expanded="false">
 									<i class="mdi mdi-account-multiple"></i>
 									<span class="hide-menu">Data Karyawan</span>
 								</a>
@@ -112,31 +118,8 @@
 				</div>
 			</aside>
 			<div class="page-wrapper">
-				<div class="container-fluid">
-					<div class="row page-titles">
-						<div class="col-md-5 col-8 align-self-center">
-							<h3 class="text-themecolor">Dashboard</h3>
-							<ol class="breadcrumb">
-								<li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-								<li class="breadcrumb-item active">Dashboard</li>
-							</ol>
-						</div>
-						<div class="col-md-7 col-4 align-self-center">
-							<a href="https://wrappixel.com/templates/materialpro/" class="btn waves-effect waves-light btn-danger pull-right hidden-sm-down"> Upgrade to Pro</a>
-						</div>
-					</div>
-					<div class="row">
-						<!-- Column -->
-					<div class="col">
-						<div class="card">
-							<div class="card-block">
-								<!-- get contents from each page -->
-								@yield('content')
-							</div>
-						</div>
-					</div>
-					</div>
-				</div>
+				<!-- get contents from each page -->
+				@yield('content')
 				<footer class="footer">PT. Mitrahasanah Sukadamai Nagrek © 2019</footer>
 			</div>
 		</div>
